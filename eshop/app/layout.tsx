@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ProductsContext from "@/utils/Context";
+import Navbar from "@/components/Navbar";
 
 
 
@@ -15,8 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="font-serif">
+        <ProductsContext>
+          <Navbar/>
         {children}
+        </ProductsContext>
       </body>
     </html>
   );
